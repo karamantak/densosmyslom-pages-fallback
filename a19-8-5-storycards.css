@@ -1,0 +1,212 @@
+/* A19.8.5 - Storybook body: featured story, category collection, events, directory.
+   Separate reversible layer. Uses only original local decorative SVG.
+   Content and event imagery remain unchanged pending original Beget backups. */
+:root{--book-burgundy:#7c2c44;--book-deep:#1b4738;--book-ink:#4e3832;--book-gold:#c49a57;--book-cream:#fff8e8}
+#today .story-categories{position:relative;margin-top:47px;margin-bottom:24px}
+#today .story-categories:before{
+ content:"✺  Откройте интересное  ✺";position:absolute;
+ left:50%;top:-33px;transform:translateX(-50%);
+ color:#995e42;font:italic 700 15px Georgia,serif;
+ white-space:nowrap;letter-spacing:.6px;text-align:center
+}
+#today .story-categories:after{
+ content:"";position:absolute;inset:-23px 0 auto;height:1px;z-index:-1;
+ background:linear-gradient(90deg,transparent,#c9a66e 16%,#c9a66e 84%,transparent)
+}
+.story-category {position:relative;box-shadow:inset 0 0 0 4px #fff8e8,inset 0 0 0 6px #d6b580,0 8px 19px #7b532525}
+.story-category:hover,.story-category:focus-visible{transform:translateY(-5px);box-shadow:inset 0 0 0 4px #fff8e8,inset 0 0 0 6px #d6b580,0 17px 30px #6a4b2a34}
+.discover-strip{position:relative;gap:17px;align-items:stretch}
+.discover-story{
+ position:relative;isolation:isolate;overflow:hidden;
+ border:4px double #c4a060;border-radius:26px;
+ background:linear-gradient(110deg,#1b4e3b,#193c32 70%,#1b4739);
+ box-shadow:0 12px 30px #5440252d,inset 0 0 0 5px #2a6449
+}
+.discover-story:before{
+ content:"";position:absolute;inset:8px;
+ border:1px solid #d5b37f80;border-radius:19px;z-index:3;
+ pointer-events:none
+}
+.discover-story:after{
+ content:"❦";position:absolute;z-index:3;top:-31px;right:10px;
+ font:154px Georgia,serif;color:#debb7981;pointer-events:none
+}
+.discover-story-art{
+ position:relative;min-height:285px;
+ border-right:3px double #d4b075;background:#274d40;isolation:isolate
+}
+.discover-story-art:after{
+ content:"";position:absolute;inset:13px;
+ border:2px solid #f2d9a88c;border-radius:130px 130px 14px 14px;
+ box-shadow:inset 0 0 0 6px #183c3157;z-index:2;pointer-events:none
+}
+.discover-story-art img{object-fit:cover;width:100%;height:100%;filter:saturate(.87) sepia(.12)}
+.discover-image-label{
+ top:18px;left:18px;border:1px solid #c3a066;
+ background:#fff2cf;color:#693248;padding:7px 13px;
+ border-radius:99px;font:700 10px Georgia,serif;letter-spacing:1px;
+ box-shadow:0 3px 10px #102d2480;z-index:4
+}
+.discover-story-copy{position:relative;z-index:4;min-width:0;padding:37px 34px 28px}
+.discover-story-copy .section-kicker{color:#f1d7a4;font:700 11px Georgia,serif;letter-spacing:1.5px}
+.discover-story-copy h2{
+ font:italic 700 clamp(27px,2.5vw,38px)/1.11 Georgia,serif;
+ color:#fff1ce;letter-spacing:-.3px;text-shadow:0 2px #0e2a246b;
+ margin-top:10px;margin-bottom:15px
+}
+.discover-story-copy p{color:#f4e5c9;font:14px/1.65 Georgia,serif}
+.discover-open{
+ align-self:flex-start;border-radius:99px;
+ color:#673548;background:linear-gradient(#fff0cc,#e7c58b);
+ border:2px solid #b18d4d;padding:11px 15px;
+ box-shadow:0 4px 12px #0e302d73;font:700 12px Georgia,serif
+}
+.discover-open:hover{background:#fff5de;color:#612638}
+.discover-aside{gap:14px}
+.discover-small{
+ position:relative;overflow:hidden;isolation:isolate;
+ border:3px double #be9a5f;border-radius:19px;
+ padding:18px 20px;box-shadow:inset 0 0 0 5px #fff4d880,0 8px 20px #75562f1d;
+ transition:transform .18s,box-shadow .18s
+}
+.discover-small:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 5px #fff4d880,0 13px 25px #75562f33}
+.discover-small:before{
+ content:"";position:absolute;z-index:0;right:-14px;bottom:-51px;width:170px;height:170px;
+ background:url("./assets/artnouveau/category-cities.svg") center/contain no-repeat;opacity:.22;pointer-events:none
+}
+.discover-world:before{background-image:url("./assets/artnouveau/category-world.svg");opacity:.24}
+.discover-small:after{
+ content:"❧";position:absolute;right:14px;top:33px;
+ font:54px Georgia,serif;color:#99744850;pointer-events:none
+}
+.discover-small-top{font:700 10px Georgia,serif;letter-spacing:1.1px}
+.discover-small strong{display:block;position:relative;font:italic 700 clamp(20px,2vw,27px)/1.18 Georgia,serif}
+.discover-small p{position:relative;color:#765d48;font:13px/1.45 Georgia,serif}
+.discover-small button{position:relative;color:#6d3040;border:1px solid #bb955c;background:#fff6e4;border-radius:40px;padding:8px 12px;font:700 11px Georgia,serif}
+.discover-world{background-color:#e5eddd}
+.discover-cities{background-color:#f6e5c7}
+.today-toolbar{
+ margin-top:36px;position:relative;
+ background:linear-gradient(#fff8ea,#f7e6c7);
+ border:3px double #caa56b;border-radius:23px;
+ box-shadow:inset 0 0 0 5px #fffae9,0 9px 21px #8e682523;
+ padding:28px 28px 19px
+}
+.today-toolbar:before{
+ content:"";position:absolute;right:13px;top:8px;
+ width:118px;height:105px;opacity:.27;pointer-events:none;
+ background:url("./assets/artnouveau/floral-corner.svg") top right/contain no-repeat;transform:scaleX(-1)
+}
+.today-toolbar .section-heading{position:relative;z-index:2}
+.today-toolbar .section-heading h2,.results-head h2{
+ font:italic 700 clamp(26px,2.9vw,38px)/1.13 Georgia,serif;color:#792a41
+}
+.today-toolbar .section-heading h2:after{content:" ❧";color:#ae7b3c}
+.today-toolbar .section-heading p{color:#836447}
+.today-toolbar .date-switcher{border-radius:14px;border:1px solid #d2af75;background:#fff8ea}
+.today-toolbar .filter-scroll{position:relative;z-index:2;margin-top:17px}
+.today-toolbar .filter-pill{background:#fff5df;border:1px solid #d9b579}
+.today-toolbar .filter-pill.active{background:#204c3d;color:#fff6df;border-color:#bd9a5b}
+.today-toolbar .reset-filters{position:relative;z-index:2;margin-top:7px}
+.event-grid{gap:18px;padding-top:7px}
+.event-card{
+ position:relative;overflow:hidden;isolation:isolate;
+ border-radius:17px;border:2px solid #c49b5d;
+ background:#fff9ec;
+ box-shadow:0 8px 19px #73502e27,inset 0 0 0 4px #fffaf4;
+}
+.event-card:before{height:5px;flex:0 0 5px;background:linear-gradient(90deg,#7a3144,#cda766 33%,#225843 65%,#7a3144)}
+.event-card:hover{box-shadow:0 15px 28px #73502e36}
+.event-card .event-media{border-bottom:3px double #cba66f;position:relative}
+.event-card .event-media:before{z-index:3;inset:8px;border:1px solid #fff4d6c9;box-shadow:inset 0 0 0 2px #54422e20}
+.event-card .event-media:after{z-index:2;pointer-events:none}
+.event-card .event-body{position:relative;padding:18px 19px 16px}
+.event-card .event-body:after{
+ content:"❧";position:absolute;z-index:0;right:7px;bottom:-22px;
+ font:106px Georgia,serif;color:#b69a6830;pointer-events:none;transform:rotate(-20deg)
+}
+.event-card .event-body>*{position:relative;z-index:1}
+.event-card .event-body h3{
+ font:700 clamp(17px,1.55vw,21px)/1.2 Georgia,serif;color:#673043
+}
+.event-card .event-body p{color:#806954;font:12px/1.6 Georgia,serif}
+.event-card .category-tag{background:#fff0d6;border:1px solid #cfac71;color:#79384a;padding:4px 8px}
+.event-card .card-foot{border-top:1px solid #dbbe8c;margin-top:16px;padding-top:13px}
+.event-card .media-date{background:#fff6dc;border:1px solid #bc995a;color:#7c3547;border-radius:20px}
+.extras-section{
+ background:linear-gradient(125deg,#fff3d8,#fcf7e8 58%,#ede5d1);
+ border:3px double #bf9a64;
+ border-radius:25px;box-shadow:inset 0 0 0 6px #fff9e5,0 12px 27px #73532f22
+}
+.extras-heading h2{font:italic 700 clamp(22px,2.6vw,34px) Georgia,serif;color:#82364b}
+.extra-card{border:1px solid #cfac77;border-radius:12px;background:#fff9e8}
+.page-intro,.world-intro,.cities-intro{
+ background-image:url("./assets/artnouveau/floral-corner.svg"),
+ linear-gradient(113deg,#fff5de,#f4e5c5 68%,#dce6cf);
+ background-size:185px auto,cover;background-position:right -34px bottom -62px,center;
+ background-repeat:no-repeat;
+ border:4px double #bc995a;box-shadow:inset 0 0 0 7px #fff9e68e,0 7px 22px #73502a28;
+}
+.page-intro:after{content:"";position:absolute;inset:12px;border:1px solid #c8a4698a;border-radius:12px;pointer-events:none}
+.page-intro h1{font:italic 700 clamp(36px,3.7vw,55px) Georgia,serif}
+.page-intro p{font:15px/1.65 Georgia,serif}
+.calendar-panel,.calendar-detail,.directory-card{box-shadow:0 6px 17px #654b2a23,inset 0 0 0 3px #fffaec}
+.directory-card{background:#fff8e8;border:2px solid #c8a46c}
+.directory-card:hover{box-shadow:0 12px 22px #654b2a37,inset 0 0 0 3px #fffaec}
+.site-footer:before{content:"❧  ❦  ❧";font:32px Georgia,serif;letter-spacing:14px;color:#c3a06c99}
+.site-footer .footer-bottom{border-top-color:#d0b37f61;color:#e5d2ae}
+html[data-theme="dark"] .story-category{box-shadow:inset 0 0 0 4px #294034,inset 0 0 0 6px #ac8a53,0 8px 19px #0e211a85}
+html[data-theme="dark"] .discover-story{background:linear-gradient(105deg,#193a31,#162f28);border-color:#ad8952;box-shadow:inset 0 0 0 5px #28513f,0 10px 23px #071a12ad}
+html[data-theme="dark"] .discover-small{background-color:#334639;border-color:#aa8a55;box-shadow:inset 0 0 0 5px #2a4438,0 9px 22px #0b201887}
+html[data-theme="dark"] .discover-small p{color:#dfc99f}
+html[data-theme="dark"] .discover-small strong{color:#f1d8ac}
+html[data-theme="dark"] .discover-small button{background:#3b5844;color:#f6d5a0;border-color:#a28759}
+html[data-theme="dark"] .today-toolbar{background:linear-gradient(#304638,#25392e);border-color:#a48652;box-shadow:inset 0 0 0 5px #273e33}
+html[data-theme="dark"] .today-toolbar .section-heading h2{color:#f3d7a7}
+html[data-theme="dark"] .today-toolbar .section-heading p{color:#d3b991}
+html[data-theme="dark"] .today-toolbar .filter-pill{background:#385342;color:#f6dfb4;border-color:#91794d}
+html[data-theme="dark"] .today-toolbar .filter-pill.active{background:#9b6c42;color:#fff9dc}
+html[data-theme="dark"] .event-card{background:#293e32;border-color:#ae8b57;box-shadow:0 8px 21px #06170fa3,inset 0 0 0 4px #2c4236}
+html[data-theme="dark"] .event-card .event-body h3{color:#f3d7a9}
+html[data-theme="dark"] .event-card .event-body p{color:#d6c1a0}
+html[data-theme="dark"] .event-card .card-foot{border-color:#866f4d}
+html[data-theme="dark"] .event-card .category-tag{background:#554331;color:#f5d9a9;border-color:#ad8a57}
+html[data-theme="dark"] .extras-section{background:linear-gradient(100deg,#3d3e31,#2a3b30);border-color:#aa8654;box-shadow:inset 0 0 0 6px #2d4233}
+html[data-theme="dark"] .extra-card{background:#384537;border-color:#927b51}
+html[data-theme="dark"] .page-intro{background-image:url("./assets/artnouveau/floral-corner.svg"),linear-gradient(113deg,#354b3c,#273d32);border-color:#9a7d4f;box-shadow:inset 0 0 0 6px #2d4438}
+html[data-theme="dark"] .directory-card{background:#2b4236;border-color:#9e7c4d;box-shadow:inset 0 0 0 3px #31493c}
+@media(max-width:1030px){
+ .today-toolbar{padding:20px}
+ .discover-story-copy{padding:24px 22px}
+ .discover-small{padding:15px}
+ .discover-story-copy h2{font-size:29px}
+}
+@media(max-width:760px){
+ #today .story-categories{margin-top:44px}
+ #today .story-categories:before{font-size:13px;top:-28px}
+ .discover-story{border-radius:19px}
+ .discover-story-art{min-height:215px;border-right:0;border-bottom:3px double #d5b57d}
+ .discover-story-art:after{border-radius:24px 24px 12px 12px}
+ .discover-story-copy{padding:23px 20px}
+ .discover-story-copy h2{font-size:29px}
+ .discover-small{padding:18px}
+ .today-toolbar{margin-top:24px;padding:16px 15px;border-radius:16px}
+ .today-toolbar .section-heading h2{font-size:26px}
+ .event-grid{gap:13px}
+ .event-card .event-body{padding:15px 15px 13px}
+ .event-card .event-body h3{font-size:19px}
+ .event-card .event-body p{font-size:12px}
+ .page-intro{background-size:130px auto,cover}
+ .page-intro h1{font-size:36px}
+}
+@media(max-width:430px){
+ .discover-story-copy h2{font-size:26px}
+ .discover-story-art{min-height:176px}
+ .today-toolbar{padding:13px 11px}
+ .event-card .event-media{height:193px}
+ .event-card .event-body h3{font-size:18px}
+ .page-intro:after{inset:6px}
+}
+@media(prefers-reduced-motion:reduce){
+ .discover-small,.event-card,.directory-card{transition:none}
+}

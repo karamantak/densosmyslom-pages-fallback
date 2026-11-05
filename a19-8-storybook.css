@@ -1,0 +1,202 @@
+/* A19.8 - second, genuinely illustrated implementation. Non-destructive layer.
+   All illustration artwork stored locally in /assets/artnouveau, no API required at runtime. */
+:root { --ornate-line:#b78b4f; --ornate-shadow:0 14px 35px #6f50292b; }
+html { scroll-padding-top:120px; }
+body {
+ background:
+   url("./assets/artnouveau/floral-corner.svg") left -80px top 160px / 270px auto no-repeat,
+   linear-gradient(95deg,#f4e5c9 0%,#fff5e2 23%,#fcf2df 78%,#eedcbf 100%);
+}
+body:before {
+ content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.18;
+ background-image:repeating-linear-gradient(45deg,#80552511 0px,#80552511 1px,transparent 1px,transparent 6px);
+}
+.reserve-alert {border-top:2px solid #e8cb9b;border-bottom:2px solid #b9894d;background:linear-gradient(99deg,#5d2638,#893345 60%,#642b3c);color:#fff4df;box-shadow:0 4px 20px #4c232521}
+.reserve-inner {grid-template-columns:42px 1fr 270px;align-items:center;padding-top:12px;padding-bottom:12px}
+.reserve-mark {border-color:#edce89;color:#f7dd9f;background:#512a33}
+.reserve-kicker {color:#f2d394}
+.reserve-copy h2 {color:#fff1d5;font-family:Georgia,serif}
+.reserve-copy p {color:#f5dfd3;line-height:1.5}
+.reserve-social {border-color:#b37475}
+.reserve-social-title,.social-link {color:#f9dec1}
+.social-link:hover {color:#fff}
+.site-header {background:#fff5e3ef;border-bottom:3px double #b38a50;box-shadow:0 5px 22px #5d46271f}
+.site-header:after {content:"";height:6px;position:absolute;left:0;right:0;bottom:0;background:repeating-linear-gradient(90deg,#d9b678 0 3px,transparent 3px 9px);opacity:.55;pointer-events:none}
+.header-inner {gap:15px}
+.brand {gap:12px}
+.brand img {width:56px;height:56px;border:2px solid #c29b5b;border-radius:12px;padding:3px;background:#faf2df}
+.brand-type strong {font-size:24px;line-height:1;max-width:185px;color:#214437;font-style:normal}
+.brand-type small {font-size:11px;color:#946941}
+.primary-nav {background:transparent;box-shadow:none;border:none;border-radius:0;gap:4px;padding:0}
+.primary-nav a {color:#573637;font:700 12px/1.2 Georgia,serif;border-radius:0;padding:13px 10px}
+.primary-nav a:hover,.primary-nav a.active {background:transparent;color:#822e41;box-shadow:inset 0 -3px #ad7045}
+.primary-nav a.active:after {display:none}
+.header-actions .icon-button {background:#fff4df;color:#774437}
+.header-actions .app-link {background:#22483b;border:2px solid #c7a266;border-radius:15px;box-shadow:0 4px 12px #21403222}
+.today-hero {margin-top:20px;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);border-radius:27px;box-shadow:0 11px 25px #4c39241c;background:#fff5df}
+.today-hero:before {z-index:4;background:url("./assets/artnouveau/floral-corner.svg") left top/contain no-repeat;width:155px;height:155px;left:-12px;top:-16px;content:"";opacity:.9}
+.today-hero:after {border-color:#c6a567}
+.hero-copy {
+ background:linear-gradient(110deg,#fdf2d9 0%,#fcf3dd 70%,#f6e8c6 100%);
+ display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
+ padding:52px 34px 48px 68px;z-index:2
+}
+.eyebrow {font:700 10px/1.4 Georgia,serif;letter-spacing:1.5px;color:#915b37;margin-bottom:22px}
+.today-hero h1 {font:700 clamp(40px,4vw,58px)/1.02 Georgia,serif;max-width:560px;letter-spacing:-1.6px;margin:0 0 18px;color:#73293e}
+.today-hero h1 em {font-style:normal;color:#225343}
+.hero-lead {font:16px/1.7 Georgia,serif;color:#664c40;max-width:485px;margin-bottom:16px}
+.hero-date-line {font-size:12px;padding:7px 14px;margin-top:0;margin-bottom:19px}
+.hero-actions {gap:9px}
+.primary-button,.light-button {min-height:45px;padding:12px 17px}
+.primary-button {background:#235c47;border-color:#b69355}
+.primary-button:hover {background:#174736}
+.light-button {background:#fff7e6;color:#6e3141}
+.hero-feature-line {display:flex;gap:6px;align-items:center;font:italic 13px Georgia,serif;color:#9b7b54;margin-top:27px}
+.hero-feature-line:after {content:"";display:inline-block;width:73px;height:1px;background:#c4a269;margin-left:9px}
+.hero-art {
+ min-height:505px;
+ background:
+    linear-gradient(180deg,#06291d03,#142c2070),
+    url("./assets/artnouveau/city-tale.svg") center/cover no-repeat!important;
+ isolation:isolate;
+}
+.hero-art:before {inset:11px;border:2px solid #e7cc97;border-radius:24px 24px 12px 12px}
+.hero-art:after {content:"";display:block;position:absolute;inset:22px;border-radius:28px;border:1px solid #e9c790a8;pointer-events:none}
+.hero-visual {display:none!important}
+.hero-art-caption {
+ position:absolute;z-index:4;left:50%;top:24px;transform:translateX(-50%);
+ display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;
+ width:min(80%,330px);padding:12px 22px 14px;
+ background:#163c34df;border:2px solid #dfbb7a;box-shadow:0 5px 15px #0d231f76;border-radius:7px 7px 28px 28px;color:#fff1cf
+}
+.hero-art-caption-kicker {font:italic 12px Georgia,serif;color:#f3d59e}
+.hero-art-caption strong {font:700 clamp(18px,1.8vw,27px)/1.05 Georgia,serif;color:#fff3d7}
+.hero-art-caption small {font:10px Georgia,serif;color:#ecce99}
+.hero-date-sticker {left:6%;bottom:6%;top:auto;width:112px;height:112px;z-index:5}
+.hero-date-sticker strong {font-size:43px}
+.hero-visual-caption {right:14px;bottom:13px;z-index:5}
+.today-overview {background:linear-gradient(110deg,#173e31,#214d39);border:3px double #cda86b;margin-top:0;border-radius:0 0 24px 24px;box-shadow:0 8px 23px #34533b3a}
+.overview-caption {background:#173a30;color:#f2dba9;position:relative}
+.overview-caption:before {content:"❧";font-size:45px;color:#cfb573;position:absolute;right:5px;bottom:-13px;opacity:.45}
+.overview-star {color:#ddb878}
+.overview-metric {border-color:#c8aa7470}
+.overview-metric strong {color:#f6dfae}
+.overview-metric span {color:#e7d3aa}
+.story-categories {grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin:34px 0 25px}
+.story-category {
+ background:#fff5df url("./assets/artnouveau/floral-corner.svg") left -37px top -48px / 104px auto no-repeat;
+ min-height:222px;border-radius:95px 95px 22px 22px;border:2px solid #be9655;
+ padding:17px 12px 21px;position:relative;overflow:hidden
+}
+.story-category:before {content:"";position:absolute;inset:5px;border:1px solid #cba86eb8;border-radius:90px 90px 17px 17px;pointer-events:none}
+.story-category:after {content:"❦";font:26px Georgia,serif;color:#a47c40;position:absolute;bottom:4px;left:50%;transform:translateX(-50%);opacity:.8}
+.story-category img {width:109px;height:109px;border:4px double #ba8c4d;box-shadow:0 5px 17px #654c2654;filter:sepia(.14) saturate(.83);margin-bottom:8px}
+.story-category strong {font:700 17px/1.15 Georgia,serif;color:#763243}
+.story-category span {font:italic 11px Georgia,serif;color:#93744c}
+.discover-story {border:3px double #c59b57;box-shadow:0 13px 25px #68472224}
+.discover-story-copy {padding:30px}
+.discover-story-copy h2 {letter-spacing:0}
+.discover-story-art img {filter:sepia(.18) saturate(.83)}
+.discover-small {background-image:url("./assets/artnouveau/floral-corner.svg"),linear-gradient(120deg,#f1d6a9,#f6e6c4);background-position:right -100px bottom -102px,center;background-size:180px,cover;background-repeat:no-repeat}
+.discover-world {background-image:url("./assets/artnouveau/floral-corner.svg"),linear-gradient(120deg,#ccdfd2,#e7efd8)}
+.today-toolbar {padding-top:44px}
+.section-heading h2,.list-toolbar h2,.directory-toolbar h2 {font-size:36px;color:#762c42}
+.section-heading h2:after {content:" ❧";color:#ba924d;font:35px Georgia,serif}
+.event-card {border:2px solid #caa36a;background:#fff9ec}
+.event-card .event-media {height:199px}
+.event-card .event-image {filter:saturate(.9) sepia(.08);transition:transform .32s}
+.event-card:before {content:"";height:4px;background:linear-gradient(90deg,#9d6b35,#d3b37c,#8b3647)}
+.event-card:hover .event-image {transform:scale(1.04)}
+.event-body h3 {font-size:20px}
+.category-tag {text-transform:none;font:700 11px Georgia,serif}
+.extras-heading h2 {color:#783145}
+.site-footer:after {content:"";display:block;position:absolute;inset:0 0 auto;height:100px;background:url("./assets/artnouveau/floral-corner.svg") right -25px top -30px / 130px no-repeat;pointer-events:none;opacity:.55}
+html[data-theme="dark"] body {background:#14261e}
+html[data-theme="dark"] .reserve-alert {background:linear-gradient(100deg,#44242e,#612d3a);border-color:#aa804a}
+html[data-theme="dark"] .reserve-copy h2 {color:#fbe0b4}
+html[data-theme="dark"] .site-header {background:#1b332b;border-color:#bb965e}
+html[data-theme="dark"] .brand-type strong {color:#f2d89c}
+html[data-theme="dark"] .primary-nav {background:transparent;border:none}
+html[data-theme="dark"] .primary-nav a {color:#e9d8b5}
+html[data-theme="dark"] .primary-nav a:hover,html[data-theme="dark"] .primary-nav a.active {background:transparent;color:#ffe4a4;box-shadow:inset 0 -3px #d3ac6c}
+html[data-theme="dark"] .hero-copy {background:linear-gradient(105deg,#273a2f,#2e3b2b)}
+html[data-theme="dark"] .today-hero h1 {color:#f3dfb5}
+html[data-theme="dark"] .today-hero h1 em {color:#d1c18f}
+html[data-theme="dark"] .hero-lead {color:#e0c9a9}
+html[data-theme="dark"] .hero-art {background:linear-gradient(180deg,#011b18b5,#12271cb3),url("./assets/artnouveau/city-tale.svg") center/cover no-repeat!important}
+html[data-theme="dark"] .hero-art-caption {background:#142e28e9}
+html[data-theme="dark"] .today-overview {background:linear-gradient(110deg,#122b22,#254334);border-color:#b2915e}
+html[data-theme="dark"] .overview-caption {background:#1b3529}
+html[data-theme="dark"] .story-category {background:#2d4436 url("./assets/artnouveau/floral-corner.svg") left -37px top -48px/104px no-repeat;border-color:#ba9257}
+html[data-theme="dark"] .story-category strong {color:#f2daaa}
+html[data-theme="dark"] .story-category span {color:#d4bb8e}
+html[data-theme="dark"] .discover-small {background-image:url("./assets/artnouveau/floral-corner.svg"),linear-gradient(120deg,#634b30,#493d2c)}
+html[data-theme="dark"] .discover-world {background-image:url("./assets/artnouveau/floral-corner.svg"),linear-gradient(120deg,#315245,#294337)}
+html[data-theme="dark"] .event-card .event-media {border-bottom-color:#b08a50}
+@media(max-width:1280px) {
+ .header-inner {gap:8px}.brand {min-width:175px}.brand-type strong{font-size:20px}
+ .primary-nav a {font-size:11px;padding:12px 7px}.header-actions{gap:7px}
+ .hero-copy {padding-left:47px}.story-categories {gap:9px}
+ .story-category {padding-left:5px;padding-right:5px}.story-category img{width:93px;height:93px}
+}
+@media(max-width:1040px) {
+ .primary-nav {display:none}.primary-nav.open {display:grid;background:#1e4233;border:2px solid #ba945b;border-radius:16px}
+ .primary-nav.open a {color:#f6dcb1}.primary-nav.open a.active {background:#ddbb7d;color:#432d27}
+ .reserve-inner {grid-template-columns:44px 1fr}
+ .story-categories {grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+ .story-category {min-height:195px}.today-hero {grid-template-columns:1fr .9fr}
+ .hero-copy {padding:43px 30px}.today-hero h1 {font-size:42px}
+ .hero-art {min-height:420px}
+}
+@media(max-width:760px) {
+ body {background:#fbf0da}
+ .reserve-inner {grid-template-columns:34px 1fr;padding:11px 14px}
+ .reserve-social {grid-column:1/-1}
+ .brand-type strong {font-size:16px}.brand img {width:42px;height:42px}
+ .today-hero {display:flex;flex-direction:column;margin:13px 0 0;border-width:2px;border-radius:18px}
+ .today-hero:before {width:82px;height:82px;left:-11px;top:-10px}
+ .hero-copy {padding:35px 26px 29px;min-height:auto}
+ .today-hero h1 {font-size:clamp(35px,9vw,47px);line-height:1.08}
+ .hero-lead {font-size:14px}.hero-date-line {font-size:11px}
+ .hero-art {min-height:310px;height:310px;background-position:center!important}
+ .hero-art-caption {top:12px;padding:9px 13px;width:78%}
+ .hero-art-caption strong {font-size:18px}
+ .hero-art-caption small {font-size:9px}
+ .hero-date-sticker {width:79px;height:82px;bottom:8%;left:5%}
+ .hero-date-sticker strong {font-size:27px}
+ .today-overview {border-radius:0 0 13px 13px}
+ .story-categories {grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:20px 0}
+ .story-category {min-height:154px;border-radius:70px 70px 14px 14px;padding:10px 3px 18px}
+ .story-category:before {border-radius:65px 65px 11px 11px}
+ .story-category img {width:69px;height:69px;border-width:3px;margin-bottom:5px}
+ .story-category strong {font-size:12px}.story-category span {font-size:9px;margin-top:3px}
+ .story-category:after {font-size:19px}
+ .today-toolbar {padding-top:26px}
+ .section-heading h2,.list-toolbar h2,.directory-toolbar h2 {font-size:26px}
+ .section-heading h2:after {font-size:20px}
+ .event-card .event-media {height:156px}
+ .event-body h3 {font-size:16px}
+}
+@media(max-width:440px) {
+ .hero-copy {padding:37px 21px 24px}
+ .hero-art {height:265px;min-height:265px}
+ .hero-art-caption {max-width:240px}
+ .hero-visual-caption {font-size:8px}
+ .story-category img {width:61px;height:61px}
+ .story-category strong {font-size:11px}
+ .event-card .event-media {height:198px}
+}
+
+/* Keep the disaster notice reassuring and compact, especially on a phone. */
+@media(max-width:760px) {
+  .reserve-inner {display:grid;grid-template-columns:27px minmax(0,1fr);gap:7px 10px;padding:8px 14px 10px}
+  .reserve-mark {width:27px;height:27px;font-size:18px;border-radius:9px}
+  .reserve-kicker {font-size:8px;letter-spacing:.5px;line-height:1.3}
+  .reserve-copy h2 {font-size:14px;line-height:1.2;margin:3px 0 4px}
+  .reserve-copy p {font-size:10px;line-height:1.34}
+  .reserve-social {grid-column:2;margin:1px 0 0;padding:0;display:flex;flex-direction:row;align-items:center;gap:8px;border:0}
+  .reserve-social-title {display:none}
+  .social-link {min-height:26px;padding:0;margin:0;gap:0}
+  .social-link span:not(.social-logo) {display:none}
+  .social-logo,.social-logo.tg,.social-logo.max {width:27px;height:25px;border-radius:7px;font-size:12px}
+}

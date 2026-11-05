@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360">
+<defs><linearGradient id="paper" x2="1" y2="1"><stop stop-color="#fff9e9"/><stop offset=".6" stop-color="#f2dfbb"/><stop offset="1" stop-color="#ebd2a3"/></linearGradient>
+<linearGradient id="gold" x2="1" y2="1"><stop stop-color="#f1d9a3"/><stop offset=".5" stop-color="#b37f41"/><stop offset="1" stop-color="#edc789"/></linearGradient></defs>
+<rect width="360" height="360" rx="24" fill="#f8edcf"/>
+<path d="M15 337V168C15 78 80 16 180 16s165 62 165 152v169Z" fill="url(#paper)" stroke="#ad7e42" stroke-width="7"/>
+<path d="M28 324V167C28 86 94 30 180 30s152 56 152 137v157Z" fill="none" stroke="#f0d6a0" stroke-width="3"/>
+<g fill="none" stroke="#b7985b" stroke-width="3" stroke-linecap="round">
+<path d="M39 295q33-12 39-48M321 295q-33-12-39-48M42 112q29-64 83-73M318 112q-29-64-83-73"/>
+</g><g fill="#63876b" stroke="#c1ac76" stroke-width="1.5">
+<ellipse cx="62" cy="262" rx="10" ry="22" transform="rotate(42 62 262)"/>
+<ellipse cx="43" cy="244" rx="8" ry="20" transform="rotate(-36 43 244)"/>
+<ellipse cx="298" cy="262" rx="10" ry="22" transform="rotate(-42 298 262)"/>
+<ellipse cx="317" cy="244" rx="8" ry="20" transform="rotate(36 317 244)"/></g>
+<g stroke="#ae8655" stroke-width="4"><path d="M48 259V166h70v93m0 0V140h87v119m0 0V168h64v91m0 0V148h55v111" fill="#eed9b2"/><path d="M48 166l35-39 35 39m0-26 44-51 43 51m0 28 33-37 31 37m0-20 27-32 28 32" fill="#a64b4b"/><path d="M156 90V53h13v37m-7-37V34m-85 95v-30m209 18V81" fill="#e2bd87"/><path d="M136 259v-55q28-45 55 0v55" fill="#396555"/><rect x="64" y="187" width="22" height="38" rx="9" fill="#f7ebc6"/><rect x="221" y="191" width="23" height="38" rx="9" fill="#f7ebc6"/><rect x="281" y="176" width="22" height="38" rx="9" fill="#f7ebc6"/></g><path d="M30 261h299" stroke="#c09c65" stroke-width="9"/><g fill="#457458" stroke="#dab97d" stroke-width="3"><path d="M27 263l28-81 27 81zM281 262l27-85 30 85z"/></g>
+<path d="M86 321q43-23 94 3 55-24 94-3" fill="none" stroke="#ba924f" stroke-width="3"/>
+<circle cx="180" cy="323" r="8" fill="#a84f52" stroke="#f4d5a1" stroke-width="3"/>
+</svg>

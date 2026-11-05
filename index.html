@@ -3,36 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#f7f7fb">
+  <meta name="theme-color" content="#fff6e5">
   <meta name="description" content="День со смыслом — праздники, исторические даты, события мира, города и регионы России. Открывайте историю каждого дня.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://densosmyslom.ru/">
-  <title>День со смыслом — резервный календарь</title>
+  <title>День со смыслом — праздники, интересные даты и истории</title>
   <link rel="icon" type="image/png" href="./assets/brand-icon.png">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./design.css">
   <link rel="stylesheet" href="./a19-7.css">
   <link rel="stylesheet" href="./a19-7-reserve.css">
+  <link rel="stylesheet" href="./a19-8-artnouveau.css">
+  <link rel="stylesheet" href="./a19-8-storybook.css">
+  <link rel="stylesheet" href="./a19-8-3-illustrations.css">
+  <link rel="stylesheet" href="./a19-8-4-hero.css">
+  <link rel="stylesheet" href="./a19-8-5-storycards.css">
+  <link rel="stylesheet" href="./assets/fonts/fonts.css">
+  <link rel="stylesheet" href="./a19-8-7-restored.css">
+  <link rel="stylesheet" href="./a19-8-8-illustrated.css">
+  <link rel="preload" as="image" href="./assets/artnouveau/a19-8-8-hero.jpg" fetchpriority="high">
   <script>try { document.documentElement.dataset.theme = localStorage.getItem("dsm-a19-theme") === "dark" ? "dark" : "light"; } catch { document.documentElement.dataset.theme = "light"; }</script>
   <script type="module" src="./app.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">К содержимому</a>
+  <div class="preview-strip">
+    <span class="preview-dot"></span> Каждый день хранит свою историю
+    <span class="preview-hide">· открывайте праздники, города и удивительные даты</span>
+  </div>
   <section class="reserve-alert" aria-labelledby="reserveTitle">
     <div class="shell reserve-inner">
-      <div class="reserve-mark" aria-hidden="true">!</div>
+      <div class="reserve-mark" aria-hidden="true"><img src="./assets/artnouveau/lantern.svg" alt="" width="60" height="72"></div>
       <div class="reserve-copy">
         <span class="reserve-kicker">ВРЕМЕННАЯ ВЕРСИЯ · ВОССТАНОВЛЕНИЕ ПОСЛЕ АВАРИИ</span>
-        <h2 id="reserveTitle">Мы на связи. Календарь работает в резервном режиме.</h2>
-        <p>Основной сервер временно недоступен после кибератаки на нашего хостинг-провайдера Beget. Мы восстановили доступные материалы и продолжаем работу. Некоторые изображения и функции пока отсутствуют — спасибо за понимание.</p>
+        <h2 id="reserveTitle">Резервная версия сайта — мы продолжаем работу.</h2>
+        <p>После кибератаки на Beget «День со смыслом» продолжает работать здесь, в резервной версии. Некоторые изображения и функции пока отсутствуют.</p>
       </div>
-      <nav class="reserve-social" aria-label="Наши страницы в соцсетях">
-        <span class="reserve-social-title">Мы в соцсетях</span>
-        <a class="social-link" href="https://vk.com/densosmyslom" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте — День со смыслом"><span class="social-logo vk" aria-hidden="true">VK</span><span>ВКонтакте</span><span aria-hidden="true">↗</span></a>
-        <a class="social-link" href="https://t.me/densosmyslom" target="_blank" rel="noopener noreferrer" aria-label="Telegram — День со смыслом"><span class="social-logo tg" aria-hidden="true">✈</span><span>Telegram</span><span aria-hidden="true">↗</span></a>
-        <a class="social-link" href="https://max.ru/densosmyslom" target="_blank" rel="noopener noreferrer" aria-label="MAX — День со смыслом"><span class="social-logo max" aria-hidden="true">М</span><span>MAX</span><span aria-hidden="true">↗</span></a>
-        <a class="social-link" href="https://ok.ru/group/70000060749766" target="_blank" rel="noopener noreferrer" aria-label="Одноклассники — День со смыслом"><span class="social-logo ok" aria-hidden="true">OK</span><span>Одноклассники</span><span aria-hidden="true">↗</span></a>
-      </nav>
     </div>
   </section>
   <header class="site-header">
@@ -60,36 +66,60 @@
         </button>
       </div>
     </div>
+      <div class="header-social-row">
+        <div class="shell social-ribbon-inner">
+        <nav class="reserve-social" aria-label="Наши страницы в соцсетях">
+          <span class="reserve-social-title">Мы в соцсетях</span>
+          <a class="social-link" href="https://vk.com/densosmyslom" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте — День со смыслом"><span class="social-logo vk" aria-hidden="true">VK</span><span>ВКонтакте</span><span aria-hidden="true">↗</span></a>
+          <a class="social-link" href="https://t.me/densosmyslom" target="_blank" rel="noopener noreferrer" aria-label="Telegram — День со смыслом"><span class="social-logo tg" aria-hidden="true">✈</span><span>Telegram</span><span aria-hidden="true">↗</span></a>
+          <a class="social-link" href="https://max.ru/channel_densosmyslom" target="_blank" rel="noopener noreferrer" aria-label="MAX — День со смыслом"><span class="social-logo max" aria-hidden="true">М</span><span>MAX</span><span aria-hidden="true">↗</span></a>
+          <a class="social-link" href="https://ok.ru/group/70000060749766" target="_blank" rel="noopener noreferrer" aria-label="Одноклассники — День со смыслом"><span class="social-logo ok" aria-hidden="true">OK</span><span>Одноклассники</span><span aria-hidden="true">↗</span></a>
+        </nav>
+        </div>
+      </div>
   </header>
   <main id="main" class="shell">
     <section id="today" class="view" aria-labelledby="todayTitle">
-      <div class="today-hero">
+      <div class="today-hero storybook-hero">
+        <div class="storybook-stage" aria-hidden="true"><img class="storybook-stage-image" src="./assets/artnouveau/a19-8-8-hero.jpg" width="2752" height="1536" fetchpriority="high" decoding="async" alt=""></div>
+        <div class="storybook-mobile-portrait" aria-hidden="true"></div>
         <div class="hero-copy">
-          <div class="eyebrow"><span class="eyebrow-symbol">✦</span> ЖИВОЙ КАЛЕНДАРЬ · КАЖДЫЙ ДЕНЬ</div>
+          <div class="eyebrow"><span class="eyebrow-symbol">✦</span> КАЛЕНДАРЬ УВЛЕКАТЕЛЬНЫХ ИСТОРИЙ</div>
           <h1 id="todayTitle">У каждого дня <em>есть своя история.</em></h1>
-          <p class="hero-lead">Праздники, открытия, необычные традиции, имена и исторические события. Откройте то, что делает эту дату особенной.</p>
+          <p class="hero-lead">Праздники, памятные даты, традиции, имена и удивительные города России. Каждый день может подарить новое открытие.</p>
+          <div class="hero-date-ornament">
+            <div class="hero-date-sticker"><span>ДАТА ДНЯ</span><strong id="artDayNumber">05</strong><small id="artMonth">ноября</small></div>
+            <div class="hero-ribbon">Всё самое интересное — <strong>в одном месте</strong></div>
+          </div>
           <div class="hero-date-line"><span class="status-mark"></span><span id="heroHumanDate">Загружаем дату…</span></div>
           <div class="hero-actions">
-            <button class="primary-button" id="scrollToday" type="button">События этого дня <span aria-hidden="true">↓</span></button>
-            <button class="light-button" id="heroCalendar" type="button">Выбрать другую дату <span aria-hidden="true">↗</span></button>
+            <button class="primary-button" id="scrollToday" type="button">Что сегодня? <span aria-hidden="true">↓</span></button>
+            <button class="light-button" id="heroCalendar" type="button">Открыть календарь <span aria-hidden="true">↗</span></button>
           </div>
-          <div class="hero-feature-line"><span>✦</span> Даты, за которыми стоят истории</div>
         </div>
-        <div class="hero-art" aria-label="Иллюстрации из каталога День со смыслом">
-          <div class="hero-visual hero-visual-history"><img src="./assets/categories/history.webp" alt="Исторические события"></div>
-          <div class="hero-visual hero-visual-global"><img src="./assets/categories/international.webp" alt="События мира"></div>
-          <div class="hero-visual hero-visual-names"><img src="./assets/categories/namedays.webp" alt="Именины"></div>
-          <div class="hero-date-sticker"><span>ДАТА ДНЯ</span><strong id="artDayNumber">03</strong><small id="artMonth">ноября</small></div>
-          <div class="hero-visual-caption">Всё самое интересное · в одном месте</div>
+        <div class="hero-art" aria-label="Иллюстрированные разделы: История, Мир и Праздники">
+          <nav class="hero-illustrated-trio" aria-label="Перейти в раздел">
+            <a class="hero-portal hero-portal-history" href="#calendar"><span>История</span></a>
+            <a class="hero-portal hero-portal-world" href="#world"><span>Мир</span></a>
+            <a class="hero-portal hero-portal-holidays" href="#today"><span>Праздники</span></a>
+          </nav>
         </div>
       </div>
       <div class="today-overview" aria-label="События дня по категориям">
-        <div class="overview-caption"><span class="overview-star">✳</span><strong>Этот день<br>в цифрах</strong></div>
+        <div class="overview-caption"><span class="overview-star">❦</span><strong>Этот день<br>в цифрах</strong></div>
         <div class="overview-metric"><strong id="todayTotal">—</strong><span>событий в каталоге</span></div>
         <div class="overview-metric"><strong id="todayHistory">—</strong><span>фактов из истории</span></div>
         <div class="overview-metric"><strong id="todayNames">—</strong><span>именинных записей</span></div>
         <div class="overview-metric"><strong id="todayOfficial">—</strong><span>государственных дат</span></div>
       </div>
+      <nav class="story-categories" aria-label="Иллюстрированные разделы календаря">
+        <a class="story-category" href="#today" aria-label="События сегодня"><img src="./assets/artnouveau/category-illustrated-holidays.jpg" alt="" loading="lazy" width="109" height="109"><strong>Праздники</strong><span>Что отмечаем</span></a>
+        <a class="story-category" href="#calendar" aria-label="Календарь событий"><img src="./assets/artnouveau/category-illustrated-history.jpg" alt="" loading="lazy" width="109" height="109"><strong>История и даты</strong><span>Календарь</span></a>
+        <a class="story-category" href="#world" aria-label="Праздники мира"><img src="./assets/artnouveau/category-illustrated-world.jpg" alt="" loading="lazy" width="109" height="109"><strong>Вокруг света</strong><span>Страны и традиции</span></a>
+        <a class="story-category" href="#search" aria-label="Поиск праздников и именин"><img src="./assets/artnouveau/category-illustrated-namedays.jpg" alt="" loading="lazy" width="109" height="109"><strong>Именины</strong><span>Поиск по каталогу</span></a>
+        <a class="story-category" href="#cities" aria-label="Города России"><img src="./assets/artnouveau/category-illustrated-cities.jpg" alt="" loading="lazy" width="109" height="109"><strong>Города России</strong><span>1 139 городов</span></a>
+        <a class="story-category" href="#regions" aria-label="Субъекты России"><img src="./assets/artnouveau/category-illustrated-regions.jpg" alt="" loading="lazy" width="109" height="109"><strong>Наши регионы</strong><span>Символы и история</span></a>
+      </nav>
       <div class="discover-strip" aria-label="Главные находки дня">
         <article class="discover-story">
           <div class="discover-story-art"><img id="discoverImage" src="./assets/categories/history.webp" alt=""><span class="discover-image-label">В ЦЕНТРЕ ВНИМАНИЯ</span></div>
@@ -170,8 +200,8 @@
   <footer class="site-footer">
     <div class="shell footer-inner">
       <div class="footer-brand"><div class="footer-mark">✦</div><div><strong>День со смыслом</strong><p>Каждый день заслуживает своей истории.</p></div></div>
-      <div class="footer-links"><a href="#today">Сегодня</a><a href="#calendar">Календарь</a><a href="#cities">Города</a><a href="mailto:support@densosmyslom.ru">Связаться с нами</a><div class="footer-social"><a href="https://vk.com/densosmyslom" target="_blank" rel="noopener noreferrer" aria-label="Наш ВКонтакте">ВКонтакте ↗</a><a href="https://t.me/densosmyslom" target="_blank" rel="noopener noreferrer" aria-label="Наш Telegram">Telegram ↗</a><a href="https://max.ru/densosmyslom" target="_blank" rel="noopener noreferrer" aria-label="Наш MAX">MAX ↗</a><a href="https://ok.ru/group/70000060749766" target="_blank" rel="noopener noreferrer" aria-label="Наши Одноклассники">Одноклассники ↗</a></div></div>
-      <div class="footer-bottom">© <span id="copyrightYear">2026</span> День со смыслом · Резервная версия · <span>Источник данных: сохранённые материалы проекта</span></div>
+      <div class="footer-links"><a href="#today">Сегодня</a><a href="#calendar">Календарь</a><a href="#cities">Города</a><a href="mailto:support@densosmyslom.ru">Связаться с нами</a><div class="footer-social"><a href="https://vk.com/densosmyslom" target="_blank" rel="noopener noreferrer" aria-label="Наш ВКонтакте">ВКонтакте ↗</a><a href="https://t.me/densosmyslom" target="_blank" rel="noopener noreferrer" aria-label="Наш Telegram">Telegram ↗</a><a href="https://max.ru/channel_densosmyslom" target="_blank" rel="noopener noreferrer" aria-label="Наш MAX">MAX ↗</a><a href="https://ok.ru/group/70000060749766" target="_blank" rel="noopener noreferrer" aria-label="Наши Одноклассники">Одноклассники ↗</a></div></div>
+      <div class="footer-bottom">© <span id="copyrightYear">2026</span> День со смыслом · <span>Резервная версия на основе сохранённых материалов проекта</span></div>
     </div>
   </footer>
   <dialog id="detailDialog" class="detail-dialog" aria-labelledby="dialogTitle">

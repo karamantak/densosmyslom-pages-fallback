@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360">
+<defs><linearGradient id="paper" x2="1" y2="1"><stop stop-color="#fff9e9"/><stop offset=".6" stop-color="#d6e3df"/><stop offset="1" stop-color="#ebd2a3"/></linearGradient>
+<linearGradient id="gold" x2="1" y2="1"><stop stop-color="#f1d9a3"/><stop offset=".5" stop-color="#b37f41"/><stop offset="1" stop-color="#edc789"/></linearGradient></defs>
+<rect width="360" height="360" rx="24" fill="#f8edcf"/>
+<path d="M15 337V168C15 78 80 16 180 16s165 62 165 152v169Z" fill="url(#paper)" stroke="#ad7e42" stroke-width="7"/>
+<path d="M28 324V167C28 86 94 30 180 30s152 56 152 137v157Z" fill="none" stroke="#f0d6a0" stroke-width="3"/>
+<g fill="none" stroke="#b7985b" stroke-width="3" stroke-linecap="round">
+<path d="M39 295q33-12 39-48M321 295q-33-12-39-48M42 112q29-64 83-73M318 112q-29-64-83-73"/>
+</g><g fill="#63876b" stroke="#c1ac76" stroke-width="1.5">
+<ellipse cx="62" cy="262" rx="10" ry="22" transform="rotate(42 62 262)"/>
+<ellipse cx="43" cy="244" rx="8" ry="20" transform="rotate(-36 43 244)"/>
+<ellipse cx="298" cy="262" rx="10" ry="22" transform="rotate(-42 298 262)"/>
+<ellipse cx="317" cy="244" rx="8" ry="20" transform="rotate(36 317 244)"/></g>
+<circle cx="181" cy="165" r="104" fill="#296b70" stroke="#b2884f" stroke-width="8"/><circle cx="181" cy="165" r="96" fill="none" stroke="#d2c99e" stroke-width="2"/><g stroke="#a1c4ad" stroke-width="3" opacity=".55" fill="none"><path d="M82 165h198M98 120h166M98 208h166M181 61v208M135 73q-70 90 0 187m94-187q70 90 0 187"/></g><path d="M111 121l31-32 21 16-9 35 19 20-9 43-24 22-13-19-8-37-19-10zM209 82l46 23 12 33-23 12-7 38 18 9-9 33-24 10-19-36 11-29-15-30z" fill="#a7b884" stroke="#e2c78f" stroke-width="3"/><ellipse cx="181" cy="165" rx="124" ry="50" transform="rotate(-30 181 165)" fill="none" stroke="#cea66b" stroke-width="5"/><path d="M181 270v32m-44 0h88" stroke="#986b42" stroke-width="9" fill="none" stroke-linecap="round"/>
+<path d="M86 321q43-23 94 3 55-24 94-3" fill="none" stroke="#ba924f" stroke-width="3"/>
+<circle cx="180" cy="323" r="8" fill="#a84f52" stroke="#f4d5a1" stroke-width="3"/>
+</svg>

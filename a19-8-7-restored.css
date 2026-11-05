@@ -1,0 +1,113 @@
+/* A19.8.7 — restored approved Art Nouveau direction after A19.8.6 Codex regression.
+   Keeps A19.8.5 layout, real data and accessible controls. Replaces only weak hero illustration.
+   A19.8.6 remains archived as a separate recoverable snapshot. */
+:root {--story-display:"Cormorant Garamond",Georgia,serif}
+body {background:radial-gradient(circle at 6% 7%,#f6dfa6a8,transparent 29%),radial-gradient(circle at 92% 50%,#e5ddbd8a,transparent 36%),#f9efdb}
+.preview-strip {background:linear-gradient(95deg,#632034,#8b2a42 52%,#632034)}
+.reserve-alert {overflow:clip}
+.site-header {z-index:100}
+.brand-type strong {font-family:var(--story-display);font-size:26px;font-weight:700;line-height:.97;max-width:210px}
+.today-hero {
+  grid-template-columns:minmax(0,.75fr) minmax(0,1.03fr) minmax(0,1.24fr);
+  background:linear-gradient(120deg,#fff6df,#fbefd2 58%,#dce3cd);
+  border:4px double #b58c4d;box-shadow:0 15px 32px #4c342329,inset 0 0 0 6px #fff7e9a8;
+}
+.today-hero .hero-copy {z-index:3}
+.today-hero h1 {font-family:var(--story-display);font-weight:700;font-size:clamp(39px,4.1vw,61px);line-height:.99;letter-spacing:-.9px}
+.today-hero h1 em {font-family:var(--story-display);font-weight:700;line-height:1.06}
+.hero-lead {font-size:15px;line-height:1.55}
+.hero-muse.hero-muse-art{
+  display:flex;position:relative;isolation:isolate;
+  justify-content:center;align-items:center;align-self:stretch;flex-direction:column;
+  min-width:0;min-height:488px;height:auto;margin:0;padding:16px 9px 28px;
+  background:radial-gradient(circle at 48% 36%,#f7ddaa,transparent 57%),linear-gradient(120deg,#f1ddbb,#d3b88a);
+  overflow:hidden;
+}
+.hero-muse-art:before{
+  content:"";position:absolute;inset:5px;pointer-events:none;z-index:3;
+  border:1px solid #b38249b8;border-radius:130px 130px 18px 18px;
+}
+.hero-muse.hero-muse-art img{
+  position:absolute;inset:15px 11px 36px;
+  display:block;width:calc(100% - 22px);height:calc(100% - 51px);max-height:none;
+  object-fit:cover;object-position:center 38%;
+  border-radius:48% 48% 7px 7px;
+  border:4px double #b68b4c;box-sizing:border-box;
+  filter:saturate(1.05) contrast(1.01);
+  box-shadow:0 6px 18px #53392255,inset 0 0 0 4px #ead2a3;
+}
+.hero-muse-art figcaption{
+  position:absolute;left:6%;right:6%;bottom:7px;z-index:4;
+  color:#643342;text-align:center;letter-spacing:.25px;
+  font:italic 700 13px var(--story-display);
+  text-shadow:0 1px #fff2d6;
+}
+.hero-art {background-position:center!important}
+.hero-art-caption strong {font-family:var(--story-display);font-weight:700;font-size:clamp(21px,2.25vw,30px)}
+.hero-portal span {font-family:var(--story-display);font-size:clamp(13px,1.5vw,20px)}
+.hero-date-sticker strong {font-family:var(--story-display)}
+.overview-caption strong {font-family:var(--story-display);font-size:21px;line-height:1.1}
+.overview-metric strong {font-family:var(--story-display);font-size:35px}
+.story-category strong {font-family:var(--story-display);font-weight:700;font-size:20px}
+.discover-story-copy h2 {font-family:var(--story-display);font-weight:700;font-size:clamp(29px,2.8vw,43px);line-height:1.02}
+.discover-small strong {font-family:var(--story-display);font-weight:700;font-size:clamp(23px,2.2vw,32px)}
+.section-heading h2,.results-head h2,.today-toolbar .section-heading h2 {font-family:var(--story-display);font-weight:700;font-size:clamp(28px,2.9vw,42px)}
+.event-card .event-body h3 {font-family:var(--story-display);font-weight:700;font-size:clamp(21px,1.7vw,26px)}
+.extras-heading h2,.page-intro h1 {font-family:var(--story-display);font-weight:700}
+.art-credit {font:italic 11px/1.5 Georgia,serif;color:#f6d9a7;text-decoration:underline;text-underline-offset:3px;white-space:normal}
+.art-credit:hover {color:white}
+html[data-theme="dark"] body {background:#14291f}
+html[data-theme="dark"] .today-hero{background:linear-gradient(120deg,#293b30,#253e32 60%,#20392f);border-color:#a98d50}
+html[data-theme="dark"] .hero-muse.hero-muse-art {background:radial-gradient(circle at 49% 37%,#554f346e,transparent 62%),#273a30}
+html[data-theme="dark"] .hero-muse-art:before {border-color:#c9a66d}
+html[data-theme="dark"] .hero-muse-art img {border-color:#d9ba7a;filter:saturate(.88) brightness(.82)}
+html[data-theme="dark"] .hero-muse-art figcaption {color:#f2d49a;text-shadow:0 1px #101d12}
+html[data-theme="dark"] .art-credit {color:#dbbe8b}
+@media (max-width:1280px){
+  .today-hero{grid-template-columns:minmax(0,.67fr) minmax(0,1.08fr) minmax(0,1.25fr)}
+  .brand-type strong{font-size:22px}
+  .today-hero h1{font-size:clamp(36px,4.15vw,54px)}
+  .hero-muse-art figcaption{font-size:11px}
+}
+@media (max-width:1040px) {
+ .today-hero{grid-template-columns:minmax(0,.68fr) minmax(0,1.1fr) minmax(0,1.14fr)}
+ .today-hero h1{font-size:43px}
+ .hero-muse.hero-muse-art{min-height:420px}
+ .hero-muse-art figcaption{font-size:10px}
+}
+@media (max-width:800px) {
+  .today-hero{display:flex!important;flex-direction:column}
+  .today-hero .hero-copy{order:1;padding:36px 28px 26px}
+  .today-hero h1{font-size:clamp(39px,7.8vw,54px)}
+  .hero-muse.hero-muse-art{
+     order:2;min-height:0;height:275px;width:100%;
+     align-self:auto;flex:none;padding:9px 0 28px;overflow:hidden;
+     background:linear-gradient(115deg,#ecdbb4,#f4e6ca,#e9cea2)
+  }
+  .hero-muse.hero-muse-art img{
+    left:50%;right:auto;top:8px;bottom:28px;transform:translateX(-50%);
+    width:min(62%,230px);height:calc(100% - 43px);
+    border-radius:46% 46% 6px 6px;object-position:center 35%;
+  }
+  .hero-muse-art:before {inset:9px 16px;border-radius:13px}
+  .hero-muse-art figcaption {font-size:12px;bottom:7px}
+  .hero-art {order:3;min-height:310px}
+  .story-category strong{font-size:15px}
+}
+@media (max-width:480px){
+  .today-hero .hero-copy{padding:34px 23px 24px}
+  .today-hero h1{font-size:clamp(37px,10vw,44px);line-height:1.01}
+  .hero-muse.hero-muse-art{height:230px}
+  .hero-muse.hero-muse-art img{width:min(58%,185px)}
+  .hero-art{min-height:280px}
+  .story-category strong{font-size:13px}
+  .event-card .event-body h3{font-size:22px}
+}
+
+/* Remove repeating legacy icon texture from the dark reserve notice. */
+html[data-theme="dark"] .reserve-alert{
+ background:linear-gradient(100deg,#493329,#2f4033 70%,#263c32);
+ background-repeat:no-repeat;border-bottom:3px double #b39259;
+}
+html[data-theme="dark"] .reserve-alert:before,
+html[data-theme="dark"] .reserve-alert:after {opacity:.27}

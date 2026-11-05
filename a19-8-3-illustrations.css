@@ -1,0 +1,110 @@
+/* A19.8.3. Real artwork for the interactive website, not a screenshot.
+   Decorative layers are pointer-events:none; all navigation/data remain functional. */
+.hero-illustrated-trio {
+  position:absolute;z-index:3;top:146px;left:50%;transform:translateX(-50%);
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  align-items:end;gap:13px;width:min(83%,510px);pointer-events:none;
+}
+.hero-portal {
+  position:relative;min-width:0;padding:5px 5px 15px;
+  border:3px double #e4c484;border-radius:60% 60% 14px 14px;
+  background:#f0dfbce8;box-shadow:0 10px 20px #112b2570,inset 0 0 0 3px #7e633e;
+  transform:translateY(5px) rotate(-4deg);
+}
+.hero-portal:nth-child(2) {z-index:2;transform:translateY(-14px);background:#f6e8c8}
+.hero-portal:nth-child(3) {transform:translateY(8px) rotate(5deg)}
+.hero-portal img {
+  display:block;width:100%;height:auto;aspect-ratio:1;
+  border-radius:50% 50% 8px 8px;object-fit:cover;
+  box-shadow:0 2px 9px #71512735;
+}
+.hero-portal span {
+  display:block;position:absolute;left:6px;right:6px;bottom:-13px;
+  padding:7px 2px;text-align:center;
+  background:linear-gradient(100deg,#ead2a1,#fff2cf,#e7c58e);border:2px solid #997140;
+  border-radius:5px 5px 16px 16px;color:#753549;
+  font:italic 700 clamp(12px,1.4vw,19px)/1.05 Georgia,serif;
+  box-shadow:0 4px 8px #193c2b60;
+}
+.hero-portal:before {content:"";position:absolute;inset:-8px;border:1px solid #e9d39e77;border-radius:60% 60% 18px 18px;pointer-events:none}
+.story-category {isolation:isolate;transition:transform .23s ease,box-shadow .23s ease,background .23s ease}
+.story-category:hover {transform:translateY(-6px);background-color:#fffaf0;box-shadow:inset 0 0 0 4px #fff8e8,0 19px 28px #69472132}
+.story-category img {
+  width:min(100%,128px);height:auto;aspect-ratio:1;
+  background:#f5e5c5;border:0;border-radius:20% 20% 13% 13%;
+  object-fit:contain;box-shadow:0 7px 18px #76563431;filter:none;
+}
+.story-category strong {max-width:155px;margin:1px auto 3px}
+.story-category span {max-width:145px}
+.event-media {isolation:isolate}
+.event-card .event-media:before {
+  content:"";position:absolute;inset:8px;z-index:1;
+  width:auto;height:auto;border:1px solid #fff0d4b0;border-radius:7px;
+  background:none;box-shadow:none;pointer-events:none;
+}
+.event-card .event-media:after {z-index:0}
+.event-card .event-image {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85) sepia(.09)}
+.event-card .event-media .media-date {box-shadow:0 2px 7px #39251733}
+.event-card .event-body h3 {font-size:clamp(18px,1.6vw,21px);line-height:1.22}
+.event-card .event-body p {line-height:1.62}
+.event-card .category-tag {border-color:#dfc18b}
+.event-card .card-foot {padding-top:15px}
+.section-heading h2:after {white-space:nowrap}
+.page-intro,.world-intro,.cities-intro {
+  background-image:url("./assets/artnouveau/floral-corner.svg"),
+    linear-gradient(115deg,#fff5de,#f5e5c3 64%,#dce5cf);
+  background-size:170px auto,auto;
+  background-position:right -20px bottom -54px,center;
+  background-repeat:no-repeat;
+}
+.page-intro h1 {max-width:740px}
+.page-intro p {max-width:650px}
+.calendar-panel,.calendar-detail {box-shadow:0 9px 29px #67482117}
+.calendar-header {border-bottom:1px solid #e4cba0;padding-bottom:17px}
+.directory-card {transition:transform .2s,box-shadow .2s}
+.directory-card:hover {transform:translateY(-3px);box-shadow:0 13px 22px #5e463127}
+.site-footer {background-image:linear-gradient(105deg,#1c3e31,#214e3d 63%,#17392f)}
+.site-footer .footer-mark {color:#f1ce89}
+html[data-theme="dark"] .hero-portal {background:#314639;border-color:#d0ab69;box-shadow:0 9px 22px #061a15a8,inset 0 0 0 3px #6f603b}
+html[data-theme="dark"] .hero-portal:nth-child(2) {background:#3d4a38}
+html[data-theme="dark"] .hero-portal span {background:linear-gradient(100deg,#6f5236,#aa854e,#6e533d);color:#fff0c8;border-color:#d1b17b}
+html[data-theme="dark"] .story-category img {background:#dfc995;box-shadow:0 8px 20px #0418129e}
+html[data-theme="dark"] .story-category:hover {background-color:#395747;box-shadow:0 13px 30px #0919119c}
+html[data-theme="dark"] .event-card .event-media:before {border-color:#f6dbaa66}
+html[data-theme="dark"] .page-intro {
+  background-image:url("./assets/artnouveau/floral-corner.svg"),
+    linear-gradient(115deg,#354d3d,#2a4038);
+}
+html[data-theme="dark"] .calendar-header {border-bottom-color:#705f43}
+@media (max-width:1200px) {
+  .hero-illustrated-trio {width:88%;gap:9px;top:164px}
+  .hero-portal {padding:4px 4px 12px}
+  .story-category img {width:min(100%,111px)}
+}
+@media (max-width:1040px) {
+  .hero-illustrated-trio {top:142px;gap:6px;width:91%}
+  .hero-portal span {font-size:12px;padding:5px 1px}
+  .story-category img {width:108px;max-width:85%}
+}
+@media (max-width:760px) {
+  .hero-illustrated-trio {top:99px;gap:9px;width:min(77%,298px)}
+  .hero-portal {padding:3px 3px 8px;border-width:2px}
+  .hero-portal:nth-child(2) {transform:translateY(-9px)}
+  .hero-portal span {left:0;right:0;bottom:-10px;font-size:10px;padding:5px 0;border-width:1px}
+  .story-category {padding-bottom:19px}
+  .story-category img {width:min(82%,92px);height:auto}
+  .story-category strong {font-size:12px}
+  .page-intro,.world-intro,.cities-intro {background-size:135px auto,auto;background-position:right -50px bottom -42px,center}
+  .event-card .event-body h3 {font-size:17px}
+}
+@media (max-width:430px) {
+  .hero-illustrated-trio {top:87px;width:74%;gap:6px}
+  .hero-portal {padding:2px 2px 9px}
+  .hero-portal span {font-size:9px}
+  .hero-date-sticker {transform:rotate(-5deg)}
+  .story-category img {width:min(80%,76px)}
+  .story-category strong {font-size:11px}
+}
+@media (prefers-reduced-motion:reduce) {
+  .story-category,.directory-card,.event-card .event-image {transition:none!important}
+}
