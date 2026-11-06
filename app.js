@@ -403,7 +403,7 @@ function directoryCard(record, kind) {
   copy.append(el("strong", "", kind === "city" ? record.name : record.name));
   copy.append(el("span", "", kind === "city" ?
     record.region + (record.population ? " · " + record.population.toLocaleString("ru-RU") + " жителей" : "") :
-    record.citiesCount + " городов в локальном каталоге"));
+    (record.citiesCount ? record.citiesCount + " городов в локальном каталоге" : "Города пока не добавлены в справочник")));
   if (kind === "city" && record.dayOfCity?.year === 2026) {
     copy.append(el("small", "directory-date", "День города в 2026: " +
       dateLabel(new Date(2026, record.dayOfCity.month - 1, record.dayOfCity.day, 12))));
@@ -502,7 +502,7 @@ function openDetail(item, type) {
     ? dateLabel(new Date(item.year || state.selected.getFullYear(), item.month - 1, item.day, 12)) + " · " + item.category +
       (item.countryCode && item.countryCode !== "RU" ? " · " + countryName(item.countryCode) : "")
     : type === "city" ? item.region + (item.population ? " · " + item.population.toLocaleString("ru-RU") + " жителей" : "")
-    : item.citiesCount + " городов в каталоге";
+    : item.citiesCount ? item.citiesCount + " городов в каталоге" : "Города пока не добавлены в справочник";
   headingCopy.append(el("div", "dialog-meta", meta), el("h2", "", title));
   headingCopy.querySelector("h2").id = "dialogTitle";
   heading.append(headingCopy);
@@ -528,7 +528,8 @@ function openDetail(item, type) {
         ["День города в 2026 году", item.dayOfCity?.year === 2026 ?
           dateLabel(new Date(2026, item.dayOfCity.month - 1, item.dayOfCity.day, 12)) +
           (item.dateEvidence ? ". " + item.dateEvidence : ". Дата из восстановленного справочника, может требовать уточнения.") : null]] :
-      [["О регионе", item.description],["История", item.history]];
+      [["О регионе", item.meaning || item.description],["История", item.history || item.description],
+        ["Регион в цифрах", item.interestingFact],["Основание даты", item.legalBasis]];
   let previous = "";
   for (const [label, value] of blocks) {
     if (!value || value === previous) continue;
