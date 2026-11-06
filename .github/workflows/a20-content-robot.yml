@@ -1,0 +1,27 @@
+name: A20 — content robot (safe test mode)
+on:
+  schedule:
+    # Moscow time 08:10, 10:10, 13:10, 18:10, UTC+3 throughout year.
+    - cron: "10 5,7,10,15 * * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: a20-content-robot
+  cancel-in-progress: false
+jobs:
+  prepare-and-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout public content snapshot
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Verify queue and safety guards
+        run: node --test a20-social/a20-social.test.mjs
+      - name: Build next week and inspect pending posts
+        run: node a20-social/run-schedule.mjs
+        # Deliberately NO --live, NO credentials and NO publisher permissions.
