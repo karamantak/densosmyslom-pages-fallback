@@ -1,5 +1,9 @@
 name: A20 — content robot (safe test mode)
 on:
+  push:
+    paths:
+      - "a20-social/**"
+      - ".github/workflows/a20-content-robot.yml"
   schedule:
     # Moscow time 08:10, 10:10, 13:10, 18:10, UTC+3 throughout year.
     - cron: "10 5,7,10,15 * * *"
